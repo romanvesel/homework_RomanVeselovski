@@ -51,6 +51,20 @@ from random import randint
 
 
 
+# a = int(input('Enter a: '))
+# b = int(input('Enter b: '))
+# n = int(input('Enter n: '))
+# m = int(input('Enter m: '))
+#
+# matrix = [[randint(a, b) for i in range(n)] for j in range(m)]
+# for index, values in enumerate(matrix):
+#     summ_str = sum(matrix[index])
+#     if matrix[index] == max(matrix):
+#         print(f'Индекс максимального ряда = {index}')
+# print(matrix)
+
+#  !!!ШЕСТОЕ ЗАДАНИЕ СДЕЛАТЬ НЕ СМОГ!!!
+
 a = int(input('Enter a: '))
 b = int(input('Enter b: '))
 n = int(input('Enter n: '))
@@ -59,6 +73,8 @@ m = int(input('Enter m: '))
 matrix = [[randint(a, b) for i in range(n)] for j in range(m)]
 for index, values in enumerate(matrix):
     summ_str = sum(matrix[index])
-    if matrix[index] == max(matrix):
-        print(f'Индекс максимальной строки = {index}')
+    if matrix[index] == min(matrix):
+        print(f'Индекс минимальной ряда = {index}')
 print(matrix)
+
+
