@@ -65,16 +65,29 @@ from random import randint
 
 #  !!!ШЕСТОЕ ЗАДАНИЕ СДЕЛАТЬ НЕ СМОГ!!!
 
+# a = int(input('Enter a: '))
+# b = int(input('Enter b: '))
+# n = int(input('Enter n: '))
+# m = int(input('Enter m: '))
+#
+# matrix = [[randint(a, b) for i in range(n)] for j in range(m)]
+# for index, values in enumerate(matrix):
+#     summ_str = sum(matrix[index])
+#     if matrix[index] == min(matrix):
+#         print(f'Индекс минимальной ряда = {index}')
+# print(matrix)
+
+
+#  !!!ВОСЬМОЕ ЗАДАНИЕ СДЕЛАТЬ НЕ СМОГ!!!
+
 a = int(input('Enter a: '))
 b = int(input('Enter b: '))
 n = int(input('Enter n: '))
 m = int(input('Enter m: '))
 
 matrix = [[randint(a, b) for i in range(n)] for j in range(m)]
-for index, values in enumerate(matrix):
-    summ_str = sum(matrix[index])
-    if matrix[index] == min(matrix):
-        print(f'Индекс минимальной ряда = {index}')
+for i in range(n):
+    for j in range(m):
+        if j > i:
+            matrix[i][j] = 0
 print(matrix)
-
-
