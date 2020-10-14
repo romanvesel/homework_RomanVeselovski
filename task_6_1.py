@@ -13,28 +13,40 @@ from random import randint
 # b = int(input('Enter b: '))
 # n = int(input('Enter n: '))
 # m = int(input('Enter m: '))
+# list_max_el = []
 # matrix = [[randint(a, b) for i in range(n)] for j in range(m)]
-# max_el = max(max(matrix))
-# print(max_el)
+# for index, value in enumerate(matrix):
+#     max_el = max(matrix[index])
+#     list_max_el.append(max_el)
+# print(max(list_max_el))
+# print(matrix)
+
 
 
 # a = int(input('Enter a: '))
 # b = int(input('Enter b: '))
 # n = int(input('Enter n: '))
 # m = int(input('Enter m: '))
+# list_min_el = []
 # matrix = [[randint(a, b) for i in range(n)] for j in range(m)]
-# min_el = min(min(matrix))
-# print(min_el)
+# for index, value in enumerate(matrix):
+#     min_el = min(matrix[index])
+#     list_min_el.append(min_el)
+# print(min(list_min_el))
+# print(matrix)
 
-summa = 0
-a = int(input('Enter a: '))
-b = int(input('Enter b: '))
-n = int(input('Enter n: '))
-m = int(input('Enter m: '))
-matrix = [[randint(a, b) for i in range(n)] for j in range(m)]
-for x in matrix:
-    summa += sum(x)
-print(summa)
-print(matrix)
+
+
+# sum_list = []
+# a = int(input('Enter a: '))
+# b = int(input('Enter b: '))
+# n = int(input('Enter n: '))
+# m = int(input('Enter m: '))
+# matrix = [[randint(a, b) for i in range(n)] for j in range(m)]
+# for i, j in enumerate(matrix):
+#     sum_list.append(sum(matrix[i]))
+# sum_list = sum(sum_list)
+# print(sum_list)
+# print(matrix)
 
 
