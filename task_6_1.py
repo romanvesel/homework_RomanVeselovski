@@ -93,19 +93,34 @@ from random import randint
 # print(matrix)
 
 
+# a = int(input('Enter a: '))
+# b = int(input('Enter b: '))
+# n = int(input('Enter n: '))
+# m = int(input('Enter m: '))
+#
+# matrix = [[randint(a, b) for i in range(n)] for j in range(m)]
+# for i in range(n):
+#     for j in range(m):
+#         if j > i:
+#             matrix[i][j] = 0
+# for i in range(n):
+#     for j in range(m):
+#         if j < i:
+#             matrix[i][j] = 0
+# print(matrix)
+
 a = int(input('Enter a: '))
 b = int(input('Enter b: '))
 n = int(input('Enter n: '))
 m = int(input('Enter m: '))
 
-matrix = [[randint(a, b) for i in range(n)] for j in range(m)]
-for i in range(n):
-    for j in range(m):
-        if j > i:
-            matrix[i][j] = 0
-for i in range(n):
-    for j in range(m):
-        if j < i:
-            matrix[i][j] = 0
-print(matrix)
+matrix_a = [[randint(a, b) for i in range(n)] for j in range(m)]
+matrix_b = [[randint(a, b) for x in range(n)] for y in range(m)]
+print(matrix_b)
+print(matrix_a)
+for x in range(n):
+    for y in range(m):
+        new_matrix = matrix_a[x][y] + matrix_b[x][y]
+        print(new_matrix, end = ' ')
+    print()
 
