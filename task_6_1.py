@@ -109,18 +109,47 @@ from random import randint
 #             matrix[i][j] = 0
 # print(matrix)
 
+# a = int(input('Enter a: '))
+# b = int(input('Enter b: '))
+# n = int(input('Enter n: '))
+# m = int(input('Enter m: '))
+#
+# matrix_a = [[randint(a, b) for i in range(n)] for j in range(m)]
+# matrix_b = [[randint(a, b) for x in range(n)] for y in range(m)]
+# print(matrix_b)
+# print(matrix_a)
+# for x in range(n):
+#     for y in range(m):
+#         new_matrix = matrix_a[x][y] + matrix_b[x][y]
+#         print(new_matrix, end = ' ')
+#     print()
+
+
+# a = int(input('Enter a: '))
+# b = int(input('Enter b: '))
+# n = int(input('Enter n: '))
+# m = int(input('Enter m: '))
+#
+# matrix_a = [[randint(a, b) for i in range(n)] for j in range(m)]
+# matrix_b = [[randint(a, b) for x in range(n)] for y in range(m)]
+# print(matrix_b)
+# print(matrix_a)
+# for x in range(n):
+#     for y in range(m):
+#         new_matrix = matrix_a[x][y] - matrix_b[x][y]
+#         print(new_matrix, end=' ')
+#     print()
+
 a = int(input('Enter a: '))
 b = int(input('Enter b: '))
 n = int(input('Enter n: '))
 m = int(input('Enter m: '))
-
+g = int(input('Введите множитель: '))
 matrix_a = [[randint(a, b) for i in range(n)] for j in range(m)]
 matrix_b = [[randint(a, b) for x in range(n)] for y in range(m)]
-print(matrix_b)
 print(matrix_a)
 for x in range(n):
     for y in range(m):
-        new_matrix = matrix_a[x][y] + matrix_b[x][y]
+        new_matrix = matrix_a[x][y] * g
         print(new_matrix, end = ' ')
     print()
-
