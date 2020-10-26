@@ -5,7 +5,7 @@ def odd(func):
         new_list = []
         for i, j in enumerate(*args):
             new_list.append(j)
-        return func(*new_list[::-1], f'Остальное - {kwargs}')
+        return func(*new_list[::-1], kwargs)
     return wraps
 
 @odd
