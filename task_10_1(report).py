@@ -42,3 +42,5 @@ with open(new_filename, 'w+') as csvfile:
     csvwriter.writerow(fields)
     csvwriter.writerow(rows)
     csvwriter.writerow(stat)
+    csvfile.close()
+    

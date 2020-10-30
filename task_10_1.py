@@ -14,3 +14,4 @@ with open(filename, 'w+') as csvfile:
     csvwriter = csv.writer(csvfile)
     csvwriter.writerow(fields)
     csvwriter.writerows(rows)
+    csvfile.close()
