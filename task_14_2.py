@@ -5,10 +5,11 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('name', type=str, help='Имя пользователя')
 parser.add_argument('surname', type=str, help='Фамилия пользователя')
-parser.add_argument('focus_time', type=int, help='Время фокусировки')
-parser.add_argument('pause_time', type=int, help='Время паузы')
-parser.add_argument('counter', type=int, help='Кол-во циклов')
+parser.add_argument('focus_time', type=int, nargs='?', default=25, help='Время фокусировки')
+parser.add_argument('pause_time', type=int, nargs='?', default=5, help='Время паузы')
+parser.add_argument('counter', type=int, nargs='?', default=4, help='Кол-во циклов')
 args = parser.parse_args()
+
 
 def focus(total_min):
     start_focus_time = datetime.timedelta(minutes=total_min)
@@ -22,6 +23,7 @@ def focus(total_min):
             print('Сделай перерыв!')
     return ' '
 
+
 def pause(pause_min):
     start_pause_time = datetime.timedelta(minutes=pause_min)
     run_pause_time = datetime.timedelta(seconds=1)
@@ -34,7 +36,8 @@ def pause(pause_min):
             print('Следующий цикл фокусировки!')
     return ' '
 
-def Pomodoro():
+
+def pomodoro():
     count = 0
     with open('pomodoro_log.txt', 'a+') as my_file:
         my_file.writelines(f'{args.name} {args.surname}: {datetime.datetime.now()}\n')
@@ -45,4 +48,5 @@ def Pomodoro():
         count += 1
     return ' '
 
-print(Pomodoro())
+
+print(pomodoro())
