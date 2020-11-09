@@ -1,11 +1,14 @@
 import time
 import datetime
+import argparse
 
-name = input('Enter your name: ')
-surname = input('Enter your surname: ')
-focus_time = int(input('Время фокусировки: '))
-pause_time = int(input('Время перерыва: '))
-counter = int(input('Количество циклов: '))
+parser = argparse.ArgumentParser()
+parser.add_argument('name', type=str, help='Имя пользователя')
+parser.add_argument('surname', type=str, help='Фамилия пользователя')
+parser.add_argument('focus_time', type=int, help='Время фокусировки')
+parser.add_argument('pause_time', type=int, help='Время паузы')
+parser.add_argument('counter', type=int, help='Кол-во циклов')
+args = parser.parse_args()
 
 def focus(total_min):
     start_focus_time = datetime.timedelta(minutes=total_min)
@@ -34,11 +37,11 @@ def pause(pause_min):
 def Pomodoro():
     count = 0
     with open('pomodoro_log.txt', 'a+') as my_file:
-        my_file.writelines(f'{name} {surname}: {datetime.datetime.now()}\n')
+        my_file.writelines(f'{args.name} {args.surname}: {datetime.datetime.now()}\n')
         my_file.close()
-    while count < counter:
-        print(focus(focus_time))
-        print(pause(pause_time))
+    while count < args.counter:
+        print(focus(args.focus_time))
+        print(pause(args.pause_time))
         count += 1
     return ' '
 
