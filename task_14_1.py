@@ -10,16 +10,21 @@ parser.add_argument('alarm_time_s', type=int)
 args = parser.parse_args()
 
 
-start_time = datetime.timedelta(hours=args.alarm_time_h, minutes=args.alarm_time_m, seconds=args.alarm_time_s)
-run_time = datetime.timedelta(seconds=1)
+timer_time = datetime.timedelta(hours=args.alarm_time_h, minutes=args.alarm_time_m, seconds=args.alarm_time_s)
 finish_time = datetime.timedelta(hours=0, minutes=0, seconds=0)
 
-while start_time > finish_time:
-    start_time = start_time - run_time
-    time.sleep(1)
-    print(start_time)
-    if start_time == finish_time:
-        print('Alarm!')
+
+def gen(start_time):
+    while start_time > finish_time:
+        time.sleep(1)
+        start_time -= datetime.timedelta(seconds=1)
+        yield start_time
+        if start_time == finish_time:
+            print('Alarm!')
+
+g = gen(timer_time)
+for i in g:
+    print(i)
 
 with open('log.txt', 'a+') as my_file:
     my_file.writelines(f'{args.alarm_name} : {datetime.datetime.now()}\n')
